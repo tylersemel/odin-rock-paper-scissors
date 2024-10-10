@@ -12,4 +12,14 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let moveIsInvalid = true;
+    while (moveIsInvalid) {
+        let humanChoice = prompt("Enter a move: ", "");
+        if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+            return humanChoice;
+        }
+    }
+}
+
+console.log(getHumanChoice());
