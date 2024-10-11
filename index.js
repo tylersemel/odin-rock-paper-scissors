@@ -20,6 +20,7 @@ function getHumanChoice() {
     let isValidChoice = false;
     let humanChoice = "";
 
+    //keep looping until one of the prompted choices is chosen
     while (!isValidChoice) {
         humanChoice = prompt("Enter rock, paper, or scissors: ", "").toLowerCase();
 
@@ -68,7 +69,7 @@ function playRound(humanChoice, computerChoice) {
     //if any of the above conditions where met, then the computer won
     //return 1
     if (isComputerWinner) {
-        console.log("You lose! ", `${computerChoice} beats ${humanChoice}`);
+        console.log("You lose!", `${computerChoice} beats ${humanChoice}`);
         return 1;
     }
 
