@@ -17,11 +17,21 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    //get the human choice and convert it to lower case for ease of comparison
-    let humanChoice = prompt("Enter rock, paper, or scissors: ", "").toLowerCase();
-    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-        return humanChoice;
+    let isValidChoice = false;
+    let humanChoice = "";
+
+    while (!isValidChoice) {
+        humanChoice = prompt("Enter rock, paper, or scissors: ", "").toLowerCase();
+
+        if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+            isValidChoice = true;
+        }
+        else {
+            alert("Please enter a valid choice!");
+        }
     }
+
+    return humanChoice;
 }
 
 function playRound(humanChoice, computerChoice) {
