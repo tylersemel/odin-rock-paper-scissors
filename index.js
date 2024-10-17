@@ -1,3 +1,8 @@
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+const divResults = document.querySelector(".results");
+
 function getComputerChoice() {
     //get a random number between 0 and 1, then convert to whole number
     let randomNum = Math.floor(Math.random() * 100);
@@ -84,18 +89,18 @@ function playGame() {
     let computerScore = 0;
 
     //loop through 5 rounds of the game
-    for (let i = 1; i <= 5; i++) {
-        //find out who won this round -> 0 for tie, 1 for computer, -1 for human
-        let roundWinner = playRound(getHumanChoice(), getComputerChoice());
+    // for (let i = 1; i <= 5; i++) {
+    //     //find out who won this round -> 0 for tie, 1 for computer, -1 for human
+    //     let roundWinner = playRound(getHumanChoice(), getComputerChoice());
 
-        //increase scores
-        if (roundWinner === 1) {
-            computerScore++;
-        }
-        else if (roundWinner === -1) {
-            humanScore++;
-        }
-    }
+    //     //increase scores
+    //     if (roundWinner === 1) {
+    //         computerScore++;
+    //     }
+    //     else if (roundWinner === -1) {
+    //         humanScore++;
+    //     }
+    // }
 
     //declare winner based on who had the higher score
     if (humanScore > computerScore) {
@@ -111,5 +116,17 @@ function playGame() {
     console.log(`The score was ${humanScore} to ${computerScore}`);
 }
 
+btnRock.addEventListener("click", () => {
+    playRound("rock", getComputerChoice());
+});
+
+btnPaper.addEventListener("click", () => {
+    playRound("paper", getComputerChoice());
+});
+
+btnScissors.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice());
+});
+
 //start the game
-playGame();
+// playGame();
